@@ -575,6 +575,12 @@
 
 /* Icon */
 
+	.faceIcon{
+		border-radius: 50%;
+		width: 100%;
+		height: auto;
+	}
+
 	.icon {
 		text-decoration: none;
 		border-bottom: none;
@@ -1232,7 +1238,7 @@
 		}
 
 			#header .logo .icon:before {
-				font-size: 2rem;
+				font-size: 2	rem;
 			}
 
 		#header .content {
@@ -1252,7 +1258,7 @@
 				-webkit-transition-delay: 0.25s;
 				-ms-transition-delay: 0.25s;
 				transition-delay: 0.25s;
-				padding: 3rem 2rem;
+				padding: 2.5rem 4rem;
 				max-height: 40rem;
 				overflow: hidden;
 			}
