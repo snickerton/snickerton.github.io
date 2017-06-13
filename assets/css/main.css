@@ -1211,14 +1211,14 @@
 		}
 
 			#header > *:before {
-				content: '';
+				/*content: '';
 				display: block;
 				position: absolute;
 				top: calc(-3.5rem - 1px);
 				left: calc(50% - 1px);
 				width: 1px;
 				height: calc(3.5rem + 1px);
-				background: #ffffff;
+				background: #ffffff;*/
 			}
 
 		#header > :first-child {
@@ -1230,9 +1230,8 @@
 			}
 
 		#header .logo {
-			width: 5.5rem;
-			height: 5.5rem;
-			line-height: 5.5rem;
+			width: 7rem;
+			height: 7rem;
 			border: solid 1px #ffffff;
 			border-radius: 100%;
 		}
@@ -1253,6 +1252,17 @@
 				-moz-transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
 				-webkit-transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
 				-ms-transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
+				transition: max-height 1s ease, padding 1s ease, opacity 0.325s ease-in-out;
+				-moz-transition-delay: 0.25s;
+				-webkit-transition-delay: 0.25s;
+				-ms-transition-delay: 0.25s;
+				transition-delay: 1.5s;
+				padding: 2.5rem 4rem;
+				max-height: 40rem;
+				overflow: hidden;
+				/*-moz-transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
+				-webkit-transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
+				-ms-transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
 				transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
 				-moz-transition-delay: 0.25s;
 				-webkit-transition-delay: 0.25s;
@@ -1260,7 +1270,7 @@
 				transition-delay: 0.25s;
 				padding: 2.5rem 4rem;
 				max-height: 40rem;
-				overflow: hidden;
+				overflow: hidden;*/
 			}
 
 				#header .content .inner > :last-child {
@@ -1288,11 +1298,11 @@
 
 			#header nav ul li {
 				padding-left: 0;
-				border-left: solid 1px #ffffff;
+				/*border-left: solid 1px #ffffff;*/
 			}
 
 				#header nav ul li:first-child {
-					border-left: 0;
+					border-left: 1;
 				}
 
 				#header nav ul li a {
@@ -1309,6 +1319,8 @@
 
 					#header nav ul li a:hover {
 						background-color: rgba(255, 255, 255, 0.075);
+						/*border: solid 0px;
+						border-radius: 4px;*/
 					}
 
 					#header nav ul li a:active {
@@ -1316,18 +1328,18 @@
 					}
 
 		#header nav.use-middle:after {
-			content: '';
+			/*content: '';
 			display: block;
 			position: absolute;
 			top: 0;
 			left: calc(50% - 1px);
 			width: 1px;
 			height: 100%;
-			background: #ffffff;
+			background: #ffffff;*/
 		}
 
 		#header nav.use-middle ul li.is-middle {
-			border-left: 0;
+			/*border-left: 0;*/
 		}
 
 		body.is-article-visible #header {
