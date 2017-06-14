@@ -1085,7 +1085,7 @@
 			-ms-transition-delay: 0.2s;
 			transition-delay: .2s;
 
-			/*overall opacity of background*/
+			/*overall opacity of background opacity*/
 			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/overlay.png");
 			background-size: auto, 256px 256px;
 			background-position: center, center;
@@ -1216,6 +1216,8 @@
 		}
 
 			#header > *:before {
+				/*middle vertical lines*/
+
 				/*content: '';
 				display: block;
 				position: absolute;
@@ -1293,6 +1295,7 @@
 
 			#header nav ul li {
 				padding-left: 0;
+				/*intro work about contact lines*/
 				/*border-left: solid 1px #ffffff;*/
 			}
 
@@ -1490,7 +1493,7 @@
 			transition: opacity 0.325s ease-in-out, transform 0.325s ease-in-out;
 			padding: 4.5rem 2.5rem 1.5rem 2.5rem ;
 			position: relative;
-			width: 40rem;
+			width: 45rem;
 			max-width: 100%;
 			background-color: rgba(27, 31, 34, 0.85);
 			border-radius: 4px;
