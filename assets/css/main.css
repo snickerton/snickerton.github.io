@@ -1086,7 +1086,7 @@
 			transition-delay: .2s;
 
 			/*overall opacity of background opacity*/
-			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/overlay.png");
+			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.3), rgba(19, 21, 25, 0.3)), url("../../images/overlay.png");
 			background-size: auto, 256px 256px;
 			background-position: center, center;
 			background-repeat: no-repeat, repeat;
@@ -1102,8 +1102,9 @@
 			-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
 			-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
 			transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-			background-image: url("../../images/blueful aerial mountains.jpg");
-			background-position: center;
+			background-image: url("../../images/distant mountains.jpg");
+			background-position: 50% 30%;
+			/*background-position: 60px 55%;*/
 			background-size: cover;
 			background-repeat: no-repeat;
 			z-index: 1;
