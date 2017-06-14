@@ -1073,16 +1073,20 @@
 		}
 
 		#bg:before {
-			-moz-transition: background-color 2.5s ease-in-out;
-			-webkit-transition: background-color 2.5s ease-in-out;
-			-ms-transition: background-color 2.5s ease-in-out;
-			transition: background-color 2.5s ease-in-out;
-			-moz-transition-delay: 0.75s;
-			-webkit-transition-delay: 0.75s;
-			-ms-transition-delay: 0.75s;
-			transition-delay: 0.75s;
+			/*opacity change quickness*/
+			-moz-transition: background-color 2s ease-in-out;
+			-webkit-transition: background-color 2s ease-in-out;
+			-ms-transition: background-color 2s ease-in-out;
+			transition: background-color 2s ease-in-out;
+
+			/*delay*/
+			-moz-transition-delay: 0.2s;
+			-webkit-transition-delay: 0.2s;
+			-ms-transition-delay: 0.2s;
+			transition-delay: .2s;
+
 			/*overall opacity of background*/
-			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.45), rgba(19, 21, 25, 0.45)), url("../../images/overlay.png");
+			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/overlay.png");
 			background-size: auto, 256px 256px;
 			background-position: center, center;
 			background-repeat: no-repeat, repeat;
@@ -1257,21 +1261,11 @@
 				-moz-transition-delay: 0.25s;
 				-webkit-transition-delay: 0.25s;
 				-ms-transition-delay: 0.25s;
-				transition-delay: 1.5s;
+				/* transition dely for header */
+				transition-delay: 1s;
 				padding: 2.5rem 4rem;
 				max-height: 40rem;
 				overflow: hidden;
-				/*-moz-transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
-				-webkit-transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
-				-ms-transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
-				transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
-				-moz-transition-delay: 0.25s;
-				-webkit-transition-delay: 0.25s;
-				-ms-transition-delay: 0.25s;
-				transition-delay: 0.25s;
-				padding: 2.5rem 4rem;
-				max-height: 40rem;
-				overflow: hidden;*/
 			}
 
 				#header .content .inner > :last-child {
