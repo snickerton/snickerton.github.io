@@ -1378,9 +1378,12 @@
 			display: flex;
 			flex-flow: column;
 
+			display: block;
+
 			list-style: none;
 			width: inherit;
 			height: 200px;
+
 
 			line-height: 2.75rem;
 			text-transform: uppercase;
@@ -1392,14 +1395,20 @@
 			border: solid 1px #ffffff;
 			border-radius: 10px;
 
-			background-image: url('images/pic02.jpg');
+			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.3), rgba(19, 21, 25, 0.3)), url('../../images/pic02.jpg');),
+			/*background-color: rgba(0,0,0,.5);*/
+			background-position: absolute;
+			background-position: center center;
+			background-size: cover;
+			z-index: 2;
 
 			border-bottom: 0;
 		}
 
 			#work nav ul li a:hover {
-				background-color: rgba(255, 255, 255, 0.1);
-				background-image: url('images/pic02.jpg');
+				background-image: url('../../images/pic02.jpg');
+				background-color: rgba(255, 255, 255, 1);
+
 				/*border: solid 0px;
 				border-radius: 4px;*/
 			}
