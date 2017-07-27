@@ -174,8 +174,17 @@
 			width: -webkit-max-content;
 			width: -ms-max-content;
 			width: max-content;
+
 			padding-bottom: 0.5rem;
 			margin: 0 0 2rem 0;
+
+			/*apparently display: block will render position centering useless*/
+			display: inline-block;
+			position: relative;
+			text-align: center;
+			/*letter spacing only adds a space to the right of letters, so we need to add a beginning space to make it even/centered */
+    	text-indent: 0.5rem;
+
 		}
 
 	h1 {
@@ -1354,7 +1363,7 @@
 
 	width: inherit;
 
-	margin: 50px;
+	margin: 0;
   padding: 0;
 
 	list-style:  none;
@@ -1366,7 +1375,7 @@
 		border-bottom: solid 1px #ffffff;
 		width: inherit;
 
-		margin: 10px;
+		margin: 20px;
 		padding: 0;
 	}
 
@@ -1382,18 +1391,17 @@
 
 			list-style: none;
 			width: inherit;
-			height: 200px;
+			height: 300px;
 
-
+			font-size: 1.2rem;
 			line-height: 2.75rem;
-			text-transform: uppercase;
-			letter-spacing: 0.2rem;
-			font-size: 0.8rem;
-			vertical-align:top;
+			text-transform: ;
+			letter-spacing: 0.15rem;
+			vertical-align: center;
 			text-align: center;
 
 			border: solid 1px #ffffff;
-			border-radius: 10px;
+			border-radius: 20px;
 
 			background-color: rgba(0,0,0,0);
 			background-image: url('../../images/pic02.jpg');
@@ -1570,6 +1578,8 @@
 			background-color: rgba(27, 31, 34, 0.85);
 			border-radius: 4px;
 			opacity: 0;
+
+			text-align: center;
 		}
 
 			#main article.active {
