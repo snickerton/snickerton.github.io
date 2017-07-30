@@ -166,7 +166,7 @@
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 			color: inherit;
 			text-decoration: none;
-		} 
+		}
 
 		h1.major, h2.major, h3.major, h4.major, h5.major, h6.major {
 			border-bottom: solid 1px #ffffff;
@@ -178,7 +178,7 @@
 			padding-bottom: 0.5rem;
 			margin: 0 0 2rem 0;
 
-			/*apparently display: block will render position centering useless*/
+			/*apparently display: block will render text align: center useless (and vice versa)*/
 			display: inline-block;
 			position: relative;
 			text-align: center;
@@ -673,7 +673,8 @@
 
 		.image.main {
 			display: block;
-			margin: 2.5rem 0;
+			margin-top: 1rem;
+			margin-bottom: 2.5rem;
 			width: 100%;
 		}
 
@@ -1305,7 +1306,7 @@
 
 			#header nav ul li {
 				padding-left: 0;
-				/*intro work about contact lines*/
+				/*intro  about contact lines*/
 				/*border-left: solid 1px #ffffff;*/
 			}
 
@@ -1371,15 +1372,16 @@
 	border-radius: 4px;*/
 }
 
+	/*THIS IS EACH BLOCK*/
 	#work nav ul li {
-		border-bottom: solid 1px #ffffff;
 		width: inherit;
-
-		margin: 20px;
+		margin-top: 1rem;
+		margin-bottom: 2.5rem;
+		/*margin: 4px;*/
 		padding: 0;
 	}
 
-
+		/*THIS IS THE STUFF INSIDE THE BLOCK*/
 		#work nav ul li a {
 			display: -moz-flex;
 			display: -webkit-flex;
@@ -1390,23 +1392,23 @@
 			display: block;
 
 			list-style: none;
-			width: inherit;
-			height: 300px;
+			width: 100%;
 
 			font-size: 1.2rem;
 			line-height: 2.75rem;
-			text-transform: ;
 			letter-spacing: 0.15rem;
 			vertical-align: center;
 			text-align: center;
 
-			border: solid 1px #ffffff;
-			border-radius: 20px;
+			/*border: solid 1px #ffffff;*/
+			border-radius: 4px;
+			/*margin: 2.5rem 0 2.5rem 0;*/
+			padding-bottom: 33%;
 
 			background-color: rgba(0,0,0,0);
 			background-image: url('../../images/pic02.jpg');
 			background-position: center center;
-			background-size: cover;
+			/*background-size: cover;*/
 			z-index: 0;
 
 			border-bottom: 0;
@@ -1580,6 +1582,13 @@
 			opacity: 0;
 
 			text-align: center;
+
+		}
+
+		#main article p{
+			/*paragraph text align center left*/
+
+			text-align: left;
 		}
 
 			#main article.active {
@@ -1629,6 +1638,50 @@
 				#main article .close:active:before {
 					background-color: rgba(255, 255, 255, 0.175);
 				}
+
+				/**/
+				/*Article Back Button*/
+				/**/
+				#main article .arrow_back {
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0rem;
+					width: 4rem;
+					height: 4rem;
+					cursor: pointer;
+					text-indent: 4rem;
+					overflow: hidden;
+					white-space: nowrap;
+				}
+
+					#main article .arrow_back:before {
+						-moz-transition: background-color 0.2s ease-in-out;
+						-webkit-transition: background-color 0.2s ease-in-out;
+						-ms-transition: background-color 0.2s ease-in-out;
+						transition: background-color 0.2s ease-in-out;
+						content: '';
+						display: block;
+						position: absolute;
+						top: 0.75rem;
+						left: 0.75rem;
+						width: 2.5rem;
+						height: 2.5rem;
+						border-radius: 100%;
+						background-position: center;
+						/*holy shit this took forever to figure out, look at the line commands at the end of the line, it's just drawn jesus fucking christ why did they use an icon it's not that much of a performance difference*/
+						background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='20px' height='20px' viewBox='0 0 20 20' zoomAndPan='disable'%3E%3Cstyle%3Eline %7B stroke: %23ffffff%3B stroke-width: 1%3B %7D%3C/style%3E%3Cline x1='18' y1='9' x2='2' y2='9' /%3E%3Cline x1='9' y1='2' x2='2' y2='9' /%3E%3Cline x1='9' y1='16' x2='2' y2='9' /%3E%3C/svg%3E");
+						background-size: 20px 20px;
+						background-repeat: no-repeat;
+					}
+
+					#main article .arrow_back:hover:before {
+						background-color: rgba(255, 255, 255, 0.075);
+					}
+
+					#main article .arrow_back:active:before {
+						background-color: rgba(255, 255, 255, 0.175);
+					}
 
 		@media screen and (max-width: 736px) {
 

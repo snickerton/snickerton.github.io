@@ -23,7 +23,10 @@
 			$header = $('#header'),
 			$footer = $('#footer'),
 			$main = $('#main'),
+			$work = $('#work'),
 			$main_articles = $main.children('article');
+			// TODO: fix this by creating the actual project pages to refer to
+			$work_articles = $work.children('href');
 
 		// Disable animations/transitions until the page has loaded.
 			$body.addClass('is-loading');
@@ -303,6 +306,26 @@
 							.on('click', function() {
 								location.hash = '';
 							});
+
+
+					// Prevent clicks from inside article from bubbling.
+						$this.on('click', function(event) {
+							event.stopPropagation();
+						});
+
+				});
+
+				// TODO: fix this by changing main articles to work_articles once work_articles array has finished
+				$main_articles.each(function() {
+
+					var $this = $(this);
+
+					// Back.
+					$('<div class="arrow_back">arrow_back</div>')
+						.appendTo($this)
+						.on('click', function(){
+							location.href = "#work";
+					});
 
 					// Prevent clicks from inside article from bubbling.
 						$this.on('click', function(event) {
