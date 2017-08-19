@@ -109,25 +109,40 @@
 									<br>
 									<h3>The "Force Push"</h3>
 									As a general rule of thumb, I suck at naming things and this one isn't an exception. So, the "force push" isn't really so much a <i> push </i> as it as a constantly-updating-force-vector-that-matches-its-respective-controller. Surprisingly, the majority of the project actually came from this single idea that a child pretending to be Luke Skywalker could now fulfill their dream in glorious VR. While this concept isn't new, a part of me decided it would be a cool idea to make a game revolving around the powers we grew up envying and pretending to have.
+<br><br>
 									As the name suggests, this ability allows the user to "use the force" on a group of objects and motion them to wherever their heart desires. More specifically, the user points with the controller to a game object and/or point on the floor and all objects in the vicinity are now affected by the force.
+<br><br>
 									How It's Made© psuedocode version:
+									<br><br>
 									- Create a "raycast" (a line) that extends out from the controller, parallel to the handle.
+<br>
 									- At the hitpoint of the raycast, do an array collection of all movable game objects within a radius.
+<br>
 									- Then, while effect still remains true, iterate through the array and update the objects accordingly (color, forces etc.)
+<br>
 									- Once button is release, reset all game objects to default attributes
+<br><br>
 									This series of steps mean that:
+<br><br>
 									- No objects can enter the spell once cast
+<br>
 									- No objects can leave the spell unless uncast
+<br>
 									- Multiple spells may be acting upon one object, and the forces with arithmetically add onto each other
+<br><br>
 									The last bullet point sounds like it wouldn't work, given the pseudocode I've just written, however through testing I realized a simple fix would just be to up
 									One of the more difficult parts of coding this force was determining exactly what sort of interaction I wanted to have with the power. Was is going to mimick the controller on a 1:1 scale and just have a delay? Was the player going to just be pushing the object from a distance with greater force? Would the force just register one straight vector command and then turn off? If you really think about the mechanics, "the force" from Star Wars is a lot more complicated and technical than you'd think.
-									In the end, I just decided to go with
-									The Force Shield
+<br>
+									In the end, I just decided to go with {Article not finished}
+<br><br>
+									<h3>The Force Shield</h3>
 									"Is it racist if I can't tell between the Agents?" - Neo (The Matrix)
 									<br>
 									<br>
+
 									<h3>The "Force Explode"</h3>
 									"It's like fus roh dah if you had mouths all over your body" - Me (Skyrim)
+<br><br>
 									Unfortunately this was showcased pretty poorly in the video, but you get the idea that we wanted to go Super Saiyan and have everything explode outwards from us in fear. In the overall broad concept of a dueling game, I decided that having multiple solutions for both defense and offense would create a lot of unique combat moments and experiences. Thus, I created a rather flashy move rolled defense and offense into one, keeping opponents on their feet and things exciting.
 									<br>
 									<br>
@@ -139,11 +154,11 @@
 									<br>
 									<br>
 									As I'll explain later, I do want some sort of projectile to shoot at people because that's what makes a dueling game fun. A while back I was actually pretty interested in things like game theory, min-max algorithms, and zero-sum situations. But more specifically I pondered what made games like League of Legends and Dota 2 so mechanically fun and addicting. In fact, I was so obsessed I had mentally devised some crazy plan on how I would write the world's best AI that could analyze every variable in such a complex game and ultimate achieve a 100% winrate on the ranked ladder.
-									<br>
+									<br><br>
 									...yeah that panned out well.
-									<br>
+									<br><br>
 									But anecdote aside I actually learned that a lot of what makes such a game fun to play and watch was the ability to respond innovatively and quickly to any move your opponent made. You might be thinking "well speed chess isn't really all that different and you don't hear teenagers screaming over that." And that's where the innovation comes in. In chess you have a rather limited scope of the various permutations of uses for pieces. You take other pieces and you control spaces. In a situation such as League however, with only 4 main abilities to use, you find professional players will often stretch their usage to the last possible mile, doing everything it takes to win a fight. For example, a simple roll/dodge ability (Vayne Q) maybe be used to either dodge multiple abilities, reposition to be just out of range of the enemy, apply extra damage, roll just into reach to last hit an enemy, or simply arrive somewhere faster. With this sort of possible innovation, the audience has a lot less to learn about the game, and more to be wowed by when a player pulls of a mechanically difficult maneuver.
-									<br>
+									<br><br>
 									Honestly I could go on for hours about the intricacies of MOBA games but for the sake of sanity let's just leave it at that.
 									In conclusion, just like League of Legends, the highly-acclaimed, triple-A title "VRWizard" must give players options to react with and innovate with the awesome abilities gifted to them in virtual reality.
 									While we're here let me just say for the record: I'm very aware that this game is not anywhere close to even having the right to be called "a game" and this is all just an excuse for me to talk about theory that I've been researching for weeks.
@@ -151,23 +166,23 @@
 									<br>
 									<h3>Universal Force Push</h3>
 									"Like a universal remote but.... yeah." - Me (real life)
-<br>
+<br><br>
 									So I went back into the code and this for some reason doesn't seem to exist anymore in the demo but originally I bound double grip to a universal force push. This meant that literally every movable game object would be at the command of the player, regardless of how far away. This would be especially cool to show off when a player would let some blocks drop off in the horizon far away and slowly bring them back up floating into view. Nothing much else to say here, the implementation was fairly simple.
 									<br>
 									<br>
 									<h3>Overall Notes</h3>
 									One of the things I mentioned in both the intro of this article and the end of the video is my computer performance. As most gaming enthusiasts know, a Nvidia Geforce GTX 950m is severely underequipped to run most VR applications. Amazingly, one of the perks to having an extremely barebones VR demo is that it runs extremely smoothly in all circumstances. So I want to emphasize the fact that even though this demo looks mediocre due to my lack of work, I honestly am not sure my computer could've run the demo + OBS if I hadn't coded everything from scratch.
-<br>
+<br><br>
 									Another thing I want to note is that while a lot of functionality may seem buggy in the video, I go on later to explain the various different combinations of "powers" that cause interesting interactions. So please keep that in mind when considering the cleanliness of the code.
 									<br>
 									<br>
 									<h3>Challenges</h3>
 									One of the more important lessons I've learned so far is how to probably write an overhead manager script in Unity. As you'll see in the video, a lot of forces from both controllers can be intermingled and come out clean. While some of this functionality can be placed on the robustness of Unity, I'm going to spike down my stake now and say I definitely put some geniune work into this one. First things first, most Unity projects you'll see online start out with controller listeners on each controller. So the right controller will have a designated right-controller-script and same with the left. This is a completely fine way to go about doing it at the beginning, but when it comes to listening for conjoined button presses (like the force explode), things get pretty gnarly quick.
-<br>
+<br><br>
 									The first though that popped into my head when thinking of a solution to listening for simultaneous button presses is that I'll just have both controllers talk to each other. Easy peasy lemon squeezy. Turns out that's actually "Difficult impossible lemon not-easy."
-<br>
+<br><br>
 									The first thing that added some confusion was the fact that when the command actually worked, for some reason the ability would always be twice as powerful as I had set it (50 units of force would somehow act 100 units on an object). This turned out to be because I had written the if statement: if (bothControllerGripPressed) on <i> both </i> controller scripts, which made total sense at the time (listener receives message, checks if self object also true, act accordingly) but unfortunately just ended up making both controllers execute the same one function.
-									<br>
+									<br><br>
 									Another thing you slowly notice when trying to implement this is that Vive controllers can flexibly switch between the label "left" and "right." Turns out programmers are smart and whoever coded this one had the controllers automatically recognize if they were on the left side of a forward facing headset or right side. The reason why this became a problem was because sending a message to "the other script" was difficult if you didn't know beforehand which script it was (left or right). Because I had hard coded in script assignments like a dummy, the listener would occasionally work and occasionally not, depending on how I picked up the controllers to test.
 									<br>
 									<br>
@@ -221,7 +236,7 @@
 							<h3> Article coming soon. </h3>
 							<p></p>
 
-							<iframe width="560" height="315" src="https://www.youtube.com/embed/jh9I2BDxyEU" frameborder="0" allowfullscreen></iframe>
+							<iframe width="630" height="315" src="https://www.youtube.com/embed/jh9I2BDxyEU" frameborder="0" allowfullscreen></iframe>
 						</article>
 
 						<!-- Work -->
