@@ -78,13 +78,152 @@
 				<!-- Main -->
 					<div id="main">
 
+							<article id = "VRWizard">
+								<h2 class="major">VR Wizard</h2>
+								<p>
+									<h4>Disclaimer: This article is still under construction. (Spell check may be needed)</h4>
+									It's official!
+									<br>
+									<br>
+									I, for the life of me, cannot record even a semi-normal tech demo. Unfortunately, the inability to do more than three takes due to rampant technical issues has rendered me incapable of presenting myself professionally. As I'll explain in the video, it was probably a blessing that I could get a Gopro, Vive, OBS, and Unity to work on a 950m graphics card. And luckily, my day job isn't "being a Youtuber."
+									Below, I've written a brief overview of my coding process for this barebones VR demo. If you manage to make it through the following article, I've decided to reward/punish you with said unprofessional video.
+									<br>
+									<br>
+									See you then.
+									<br>
+									<br>
+									<h3>Intro</h3>
+									First things first, I want to recognize the fact that this is a very underwhelming coding project that is clearly not at all finished and I apologize for my astonishing procrastination skills. However, within 48 hours I'll be shipped off to my college dormitory (where I won't have access to a Vive) so I realized this would be the last opportunity to do a demo/write-up.
+									My laziness aside, here's how this article organization is going to go:
+<br><br>
+									1) Overview of three main "powers" you see in the video and how I implemented them in Unity.
+<br>
+									2) Developer notes on other features, optimizations, or algorithms I made that weren't mentioned.
+<br>
+									3) Challenges faced when working on the project.
+<br>
+									4) Future plans for the "game" and how I plan to go about doing them.
+<br><br>
+									Feel free to skip any and all of what's to come.
+									<br>
+									<br>
+									<h3>The "Force Push"</h3>
+									As a general rule of thumb, I suck at naming things and this one isn't an exception. So, the "force push" isn't really so much a <i> push </i> as it as a constantly-updating-force-vector-that-matches-its-respective-controller. Surprisingly, the majority of the project actually came from this single idea that a child pretending to be Luke Skywalker could now fulfill their dream in glorious VR. While this concept isn't new, a part of me decided it would be a cool idea to make a game revolving around the powers we grew up envying and pretending to have.
+									As the name suggests, this ability allows the user to "use the force" on a group of objects and motion them to wherever their heart desires. More specifically, the user points with the controller to a game object and/or point on the floor and all objects in the vicinity are now affected by the force.
+									How It's Made© psuedocode version:
+									- Create a "raycast" (a line) that extends out from the controller, parallel to the handle.
+									- At the hitpoint of the raycast, do an array collection of all movable game objects within a radius.
+									- Then, while effect still remains true, iterate through the array and update the objects accordingly (color, forces etc.)
+									- Once button is release, reset all game objects to default attributes
+									This series of steps mean that:
+									- No objects can enter the spell once cast
+									- No objects can leave the spell unless uncast
+									- Multiple spells may be acting upon one object, and the forces with arithmetically add onto each other
+									The last bullet point sounds like it wouldn't work, given the pseudocode I've just written, however through testing I realized a simple fix would just be to up
+									One of the more difficult parts of coding this force was determining exactly what sort of interaction I wanted to have with the power. Was is going to mimick the controller on a 1:1 scale and just have a delay? Was the player going to just be pushing the object from a distance with greater force? Would the force just register one straight vector command and then turn off? If you really think about the mechanics, "the force" from Star Wars is a lot more complicated and technical than you'd think.
+									In the end, I just decided to go with
+									The Force Shield
+									"Is it racist if I can't tell between the Agents?" - Neo (The Matrix)
+									<br>
+									<br>
+									<h3>The "Force Explode"</h3>
+									"It's like fus roh dah if you had mouths all over your body" - Me (Skyrim)
+									Unfortunately this was showcased pretty poorly in the video, but you get the idea that we wanted to go Super Saiyan and have everything explode outwards from us in fear. In the overall broad concept of a dueling game, I decided that having multiple solutions for both defense and offense would create a lot of unique combat moments and experiences. Thus, I created a rather flashy move rolled defense and offense into one, keeping opponents on their feet and things exciting.
+									<br>
+									<br>
+									<h3>Developer Notes</h3>
+									<h4>Powers not shown in the video:</h4>
+									<b>MagicMissile()</b>
+<br>
+									"I cast magic missile as a 6th level spell and it's f***ing awesome" - Me (Dungeons and Dragons)
+									<br>
+									<br>
+									As I'll explain later, I do want some sort of projectile to shoot at people because that's what makes a dueling game fun. A while back I was actually pretty interested in things like game theory, min-max algorithms, and zero-sum situations. But more specifically I pondered what made games like League of Legends and Dota 2 so mechanically fun and addicting. In fact, I was so obsessed I had mentally devised some crazy plan on how I would write the world's best AI that could analyze every variable in such a complex game and ultimate achieve a 100% winrate on the ranked ladder.
+									<br>
+									...yeah that panned out well.
+									<br>
+									But anecdote aside I actually learned that a lot of what makes such a game fun to play and watch was the ability to respond innovatively and quickly to any move your opponent made. You might be thinking "well speed chess isn't really all that different and you don't hear teenagers screaming over that." And that's where the innovation comes in. In chess you have a rather limited scope of the various permutations of uses for pieces. You take other pieces and you control spaces. In a situation such as League however, with only 4 main abilities to use, you find professional players will often stretch their usage to the last possible mile, doing everything it takes to win a fight. For example, a simple roll/dodge ability (Vayne Q) maybe be used to either dodge multiple abilities, reposition to be just out of range of the enemy, apply extra damage, roll just into reach to last hit an enemy, or simply arrive somewhere faster. With this sort of possible innovation, the audience has a lot less to learn about the game, and more to be wowed by when a player pulls of a mechanically difficult maneuver.
+									<br>
+									Honestly I could go on for hours about the intricacies of MOBA games but for the sake of sanity let's just leave it at that.
+									In conclusion, just like League of Legends, the highly-acclaimed, triple-A title "VRWizard" must give players options to react with and innovate with the awesome abilities gifted to them in virtual reality.
+									While we're here let me just say for the record: I'm very aware that this game is not anywhere close to even having the right to be called "a game" and this is all just an excuse for me to talk about theory that I've been researching for weeks.
+									<br>
+									<br>
+									<h3>Universal Force Push</h3>
+									"Like a universal remote but.... yeah." - Me (real life)
+<br>
+									So I went back into the code and this for some reason doesn't seem to exist anymore in the demo but originally I bound double grip to a universal force push. This meant that literally every movable game object would be at the command of the player, regardless of how far away. This would be especially cool to show off when a player would let some blocks drop off in the horizon far away and slowly bring them back up floating into view. Nothing much else to say here, the implementation was fairly simple.
+									<br>
+									<br>
+									<h3>Overall Notes</h3>
+									One of the things I mentioned in both the intro of this article and the end of the video is my computer performance. As most gaming enthusiasts know, a Nvidia Geforce GTX 950m is severely underequipped to run most VR applications. Amazingly, one of the perks to having an extremely barebones VR demo is that it runs extremely smoothly in all circumstances. So I want to emphasize the fact that even though this demo looks mediocre due to my lack of work, I honestly am not sure my computer could've run the demo + OBS if I hadn't coded everything from scratch.
+<br>
+									Another thing I want to note is that while a lot of functionality may seem buggy in the video, I go on later to explain the various different combinations of "powers" that cause interesting interactions. So please keep that in mind when considering the cleanliness of the code.
+									<br>
+									<br>
+									<h3>Challenges</h3>
+									One of the more important lessons I've learned so far is how to probably write an overhead manager script in Unity. As you'll see in the video, a lot of forces from both controllers can be intermingled and come out clean. While some of this functionality can be placed on the robustness of Unity, I'm going to spike down my stake now and say I definitely put some geniune work into this one. First things first, most Unity projects you'll see online start out with controller listeners on each controller. So the right controller will have a designated right-controller-script and same with the left. This is a completely fine way to go about doing it at the beginning, but when it comes to listening for conjoined button presses (like the force explode), things get pretty gnarly quick.
+<br>
+									The first though that popped into my head when thinking of a solution to listening for simultaneous button presses is that I'll just have both controllers talk to each other. Easy peasy lemon squeezy. Turns out that's actually "Difficult impossible lemon not-easy."
+<br>
+									The first thing that added some confusion was the fact that when the command actually worked, for some reason the ability would always be twice as powerful as I had set it (50 units of force would somehow act 100 units on an object). This turned out to be because I had written the if statement: if (bothControllerGripPressed) on <i> both </i> controller scripts, which made total sense at the time (listener receives message, checks if self object also true, act accordingly) but unfortunately just ended up making both controllers execute the same one function.
+									<br>
+									Another thing you slowly notice when trying to implement this is that Vive controllers can flexibly switch between the label "left" and "right." Turns out programmers are smart and whoever coded this one had the controllers automatically recognize if they were on the left side of a forward facing headset or right side. The reason why this became a problem was because sending a message to "the other script" was difficult if you didn't know beforehand which script it was (left or right). Because I had hard coded in script assignments like a dummy, the listener would occasionally work and occasionally not, depending on how I picked up the controllers to test.
+									<br>
+									<br>
+									Trust me, that whole situation a fun one to debug and eventually understand.
+									<br>
+									<br>
+									At this point you might say "well then why don't you just search for a non-self-referencing gameObject with the name "Controller"?" To which I'd respond, "950m. There must be a better way."
+									And thus, the "Behavior Monitor" script was born. This script regularly recieved updates from both controller scripts, which were now re-coded to be identical (or should I say ambidextrous?) and created events accordingly, viola.
+									<br>
+									<br>
+									<h3>Future Plans</h3>
+									One of the first things I'd definitely like to implement is fast moving projectiles that I can shoot at other entities and objects. This honestly isn't really that much work (aside from well known bullet through paper" problem) however as stated before, I'm lazy, I've run out of buttons to put abilities on, and there's no other party to shoot yet...
+									<br>
+									<br>
+									Don't quote that out of context.
+									<br>
+									<br>
+									Speaking of running out of buttons, one interesting solution I came up with was having gesture recognition in midair to cast "spells." I'm very aware that this isn't a new concept in VR games, however I think it'd be interesting to see that particular mechanic in 1v1 situations:
+									<br><br>
+									"oh god, what's he drawing? Oh GOD it's... a round shield? wait no- another...? oh wait it's...  oh... well that's just rude."
+									<br><br>
+									Joking aside, this would lead to more immersive and high-pressure situations where the player actually has to remember a certain visual pattern rather than just press some buttons. Also I definitely think it'd be good practice to attempt shape recognition in 3D space. Who knows, maybe I'll try throwing in a simple neural network there and see where it takes me.
+									And finally, while I obviously still have a lot more texturing and gameplay improvements to do, I still want to implement the main selling point of this game idea: multiplayer.
+								</P>
+								<iframe width="630" height="315" src="https://www.youtube.com/embed/I92sFtJQeEQ" frameborder="0" allowfullscreen></iframe>
+							</article>
 						<!-- Intro -->
 							<article id="intro">
 								<h2 class="major">Intro</h2>
 								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#work">awesome work</a>.</p>
-								<p>Lorem ipsum dolor sit amet,  consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+								<p>It is currently 2:00am right now as I'm writing this and in less than 24 hrs I need to drive to my first day at college and move in.
+									<br>
+									<br>
+									I suppose the first thing any job recruiter or prospective roommate should know about me is that I'm pretty much the Dr. Jekyll (and Hyde) of productivity. In about a perfect 50/50 ratio I'll either be astonishingly lazy (I once programmed a robot arm to wave at my dorm room's motion sensored lights for me) or I'll be manically obssessed with completing a project (I once pulled an all-nighter to program a robot arm...yeah you get the point). I suppose that goes to show really how important passion is in my life and that sometimes . However, because tonight is definitely going to be <i> one of those nights </i> let's go ahead and try to write a proper introduction:
+									<br>
+									<br>
+									Hi, my name is Tony and this is my life.
+									<br>
+									<br>
+									I'm a 19 year old student who recently graduated from Exeter, and spend a lot of my time coding, but significantly more of that time just feeling guilty for procrastinating my coding. I greatly enjoy playing ultimate frisbee anytime anywhere. Weirdly enough, even though I usually joke about have no work ethic whatsoever I'm actually quite consistent about working out three times a week. In addition, I've developed a pretty bad habit of obssessively micro-managing all of my nutrition (protein, calories, vitamins etc.) throughout the day. Often times people will catch me either rapid-fire orating my stream of consciousness on artificial intelligence or staring into oblivion while I ponder what happens if a neural networks learns to improve itself. Finally, as you'll soon learn in my articles and video demos, I enjoy entertaining people by pretending to be a comic or attempting to be witty, because as they say, laughter is the best medicine.
+									<br>
+									<br>
+									Overall I'm just a programmer that likes ideas, and loves executing ideas even more (when it actually happens).
+									Hopefully you enjoy my <a href="#work">work</a> and writing, and if not, well... let's hope you're not a job recruiter.
+								</p>
+
 							</article>
+						<!-- i3wm -->
+						<article id = "i3wm">
+							<h2 class="major">Diving Into ArchLinux</h2>
+							<h3> Article coming soon. </h3>
+							<p></p>
+
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/jh9I2BDxyEU" frameborder="0" allowfullscreen></iframe>
+						</article>
+
 						<!-- Work -->
 							<article id="work">
 								<h2 class="major">Work</h2>
@@ -92,10 +231,10 @@
 								<nav>
 									<ul>
 										<!-- Actually create work article pages, preferably in another document, so that we can refer to them in jquery -->
-										<li><a href="#intro"> Middle Out Compression </a></li>
-										<li><a href="#work">  Hello World </a></li>
-										<li><a href="#about"> Using a recurrent neural network to simulate a recurrent neural network </a></li>
-										<li><a href="#contact"> Inserting Satirical Placeholders for New Website </a></li>
+										<li><a href="#VRWizard" id = "VRWizardIcon"> VR Wizard (A Vive Project) </a></li>
+										<li><a href="#i3wm" id = "i3wmIcon"> Diving Into ArchLinux </a></li>
+										<li><a href="#intro"> Middle Out Compression (joke) </a></li>
+										<li><a href="#intro"> Inserting Satirical Placeholders for New Website (joke)</a></li>
 										<!-- <img src="images/pic02.jpg" alt="" />  -->
 										<!--<li><a href="#elements">Elements</a></li>-->
 									</ul>

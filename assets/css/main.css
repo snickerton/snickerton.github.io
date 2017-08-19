@@ -181,7 +181,7 @@
 			/*apparently display: block will render text align: center useless (and vice versa)*/
 			display: inline-block;
 			position: relative;
-			text-align: center;
+			/*text-align: center;*/
 			/*letter spacing only adds a space to the right of letters, so we need to add a beginning space to make it even/centered */
     	text-indent: 0.5rem;
 
@@ -197,6 +197,7 @@
 		font-size: 1.5rem;
 		line-height: 1.4;
 		letter-spacing: 0.5rem;
+
 	}
 
 	h3 {
@@ -1406,17 +1407,43 @@
 			padding-bottom: 33%;
 
 			background-color: rgba(0,0,0,0);
-			background-image: url('../../images/pic02.jpg');
+			/*background-image: url('../../images/pic02.jpg');*/
 			background-position: center center;
 			/*background-size: cover;*/
 			z-index: 0;
 
 			border-bottom: 0;
 		}
+		#i3wmIcon{
+			opacity: .5;
+			transition: opacity 1.5s;
+			/*background-color: rgba(0,0,0,0);*/
+			background-image: url('../../images/archlinux.png');
+
+
+		}
+		#VRWizardIcon{
+			opacity: .5;
+			transition: opacity 1.5s;
+			background-size: cover;
+			background-image: url('../../images/vive.png');
+
+		}
+			#i3wmIcon:hover{
+				opacity: .95;
+				transition: opacity 1.5s;
+				background-image: url('../../images/archlinux.png');
+			}
+			#VRWizardIcon:hover{
+				opacity: .95;
+				transition: opacity 1.5s;
+				background-size: cover;
+				background-image: url('../../images/vive.png');
+			}
 
 			#work nav ul li a:hover {
 				background-color: rgba(255, 255, 255, 1);
-				background-image: url('../../images/pic02.jpg');
+				/*background-image: url('../../images/pic02.jpg');*/
 
 				/*border: solid 0px;
 				border-radius: 4px;*/
@@ -1581,7 +1608,7 @@
 			border-radius: 4px;
 			opacity: 0;
 
-			text-align: center;
+			/*text-align: center;*/
 
 		}
 
