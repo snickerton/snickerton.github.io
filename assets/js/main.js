@@ -324,8 +324,10 @@
 					$('<div class="arrow_back">arrow_back</div>')
 						.appendTo($this)
 						.on('click', function(){
-							location.href = "#work";
-					});
+							// location.href = "#work";
+							parent.history.back();
+									return false;
+						});
 
 					// Prevent clicks from inside article from bubbling.
 						$this.on('click', function(event) {
