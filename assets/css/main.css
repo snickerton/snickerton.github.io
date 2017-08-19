@@ -1405,41 +1405,15 @@
 			border-radius: 4px;
 			/*margin: 2.5rem 0 2.5rem 0;*/
 			padding-bottom: 33%;
+			/*background-image: url('../../images/pic02.jpg');*/
 
 			background-color: rgba(0,0,0,0);
-			/*background-image: url('../../images/pic02.jpg');*/
 			background-position: center center;
 			/*background-size: cover;*/
 			z-index: 0;
 
 			border-bottom: 0;
 		}
-		#i3wmIcon{
-			opacity: .5;
-			transition: opacity 1.5s;
-			/*background-color: rgba(0,0,0,0);*/
-			background-image: url('../../images/archlinux.png');
-
-
-		}
-		#VRWizardIcon{
-			opacity: .5;
-			transition: opacity 1.5s;
-			background-size: cover;
-			background-image: url('../../images/vive.png');
-
-		}
-			#i3wmIcon:hover{
-				opacity: .95;
-				transition: opacity 1.5s;
-				background-image: url('../../images/archlinux.png');
-			}
-			#VRWizardIcon:hover{
-				opacity: .95;
-				transition: opacity 1.5s;
-				background-size: cover;
-				background-image: url('../../images/vive.png');
-			}
 
 			#work nav ul li a:hover {
 				background-color: rgba(255, 255, 255, 1);
@@ -1448,6 +1422,48 @@
 				/*border: solid 0px;
 				border-radius: 4px;*/
 			}
+
+			/*This code is more spaghetti than chef boyaardi - Tony Zhu 3:00am 8/19/17*/
+			#placeholder{
+				opacity: .5;
+				transition: opacity 1s;
+				background-size: cover;
+				background-image: url('../../images/pic02.jpg');
+
+			}
+				#placeholder:hover{
+					opacity: .95;
+					transition: opacity 1s;
+					background-image: url('../../images/pic02.jpg');
+				}
+
+			#i3wmIcon{
+				opacity: .5;
+				transition: opacity 1s;
+				/*background-color: rgba(0,0,0,0);*/
+				background-image: url('../../images/archlinux.png');
+
+
+			}
+			#VRWizardIcon{
+				opacity: .5;
+				transition: opacity 1s;
+				background-size: cover;
+				background-image: url('../../images/vive.png');
+
+			}
+				#i3wmIcon:hover{
+					opacity: .95;
+					transition: opacity 1s;
+					background-image: url('../../images/archlinux.png');
+				}
+				#VRWizardIcon:hover{
+					opacity: .95;
+					transition: opacity 1s;
+					background-size: cover;
+					background-image: url('../../images/vive.png');
+				}
+
 
 		body.is-article-visible #header {
 			-moz-transform: scale(0.95);
