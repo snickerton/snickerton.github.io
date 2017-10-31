@@ -1113,6 +1113,9 @@
 			-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
 			-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
 			transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
+			/*Background image*/
+			/*background-image: url("../../images/HackTX Cover Photo.jpg");*/
+
 			background-image: url("../../images/distant mountains.jpg");
 			background-position: 50% 37%;
 			/*background-position: 60px 55%;*/
