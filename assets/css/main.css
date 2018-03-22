@@ -1441,19 +1441,18 @@
 				}
 
 			#i3wmIcon{
-				opacity: .5;
+				opacity: .7;
 				transition: opacity 1s;
 				/*background-color: rgba(0,0,0,0);*/
 				background-image: url('../../images/archlinux.png');
-
-
 			}
+
 			#VRWizardIcon{
-				opacity: .5;
+				opacity: .7;
 				transition: opacity 1s;
 				background-size: cover;
-				background-image: url('../../images/vive.png');
-
+				background-image: url('../../images/vive2.png');
+				color: black;
 			}
 				#i3wmIcon:hover{
 					opacity: .95;
@@ -1464,8 +1463,37 @@
 					opacity: .95;
 					transition: opacity 1s;
 					background-size: cover;
-					background-image: url('../../images/vive.png');
+					background-image: url('../../images/vive2.png');
 				}
+
+				#MoshMusicIcon{
+					opacity: .7;
+					transition: opacity 1s;
+					background-size: cover;
+					background-image: url('../../images/MoshMusic2.png');
+				}
+
+				#SucculentIcon{
+					opacity: .7;
+					transition: opacity 1s;
+					background-size: cover;
+					background-image: url('../../images/succulent.jpg');
+					color: black;
+				}
+
+					#MoshMusicIcon:hover{
+						opacity: .95;
+						transition: opacity 1s;
+						background-size: cover;
+						background-image: url('../../images/MoshMusic2.png');
+					}
+					#SucculentIcon:hover{
+						opacity: .95;
+						transition: opacity 1s;
+						background-size: cover;
+						background-image: url('../../images/succulent.jpg');
+					}
+
 
 
 		body.is-article-visible #header {
